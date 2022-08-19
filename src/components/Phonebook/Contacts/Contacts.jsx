@@ -3,18 +3,14 @@ import s from './contacts.module.css';
 
 const Contacts = ({ items, removeContact }) => {
   const elements = items.map(({ id, name, number }) => (
-    <div className={s.list}>
-      <li key={id} className={s.listItem}>
+    <li key={id} className={s.listItem}>
+      <span>
         {name} {number}
-        <button
-          onClick={() => removeContact(id)}
-          className={s.btn}
-          type="submit"
-        >
-          Delete
-        </button>
-      </li>
-    </div>
+      </span>
+      <button onClick={() => removeContact(id)} className={s.btn} type="submit">
+        Delete
+      </button>
+    </li>
   ));
 
   return (
